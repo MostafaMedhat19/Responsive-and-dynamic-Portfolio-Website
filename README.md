@@ -94,8 +94,17 @@ The **Portfolio Dashboard** is a **responsive and dynamic web application** that
 ---
 
 ## 💻 How to Run
+Run it:
+
+- Just open index.html in your browser.
+
+- Or use a local server like "Live Server" in VS Code for better development experience.
+
+- Connect to Real Backend (Optional):
+
+- Replace the mocked API URLs inside script.js with your own API base URL 
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/portfolio-dashboard.git
-   cd portfolio-dashboard
+   git clone https://github.com/MostafaMedhat19/Responsive-and-dynamic-Portfolio-Website.git
+
