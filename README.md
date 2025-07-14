@@ -83,6 +83,11 @@ The **Portfolio Dashboard** is a **responsive and dynamic web application** that
   <img src="https://github.com/user-attachments/assets/c42b3feb-b2bd-421f-953a-8fe8c7d6442b" alt="Screenshot 10 - 223815" width="300" style="margin-right: 10px;" />
 
 </div>
+<p align="center">
+  <a href="https://www.linkedin.com/posts/mostafamedhat-dev_webdevelopment-portfoliodashboard-frontenddevelopment-activity-7340516875543429120-D3yP?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEGEn_QBi7EWFLs6EwtB1AvT8AUGyc6BDdA" target="_blank">
+    <img src="https://img.shields.io/badge/🎥 Watch%20Project%20Demo%20on%20LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="Watch on LinkedIn" />
+  </a>
+</p>
 
 ---
 
