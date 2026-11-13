@@ -1,115 +1,100 @@
-# 📊 Portfolio Dashboard - Responsive and Dynamic Portfolio Website
+<div align="center">
 
-## 🔍 Overview
+# Portfolio Command Center
 
-The **Portfolio Dashboard** is a **responsive and dynamic web application** that serves as a project management and portfolio showcasing tool for developers and designers. It offers an intuitive interface to manage projects, track progress, and display work visually in a clean and organized way.
+### A responsive personal portfolio connected to a secured ASP.NET Core dashboard
 
----
-
-## 🚀 Key Features
-
-### 1. 🔐 User Authentication
-- Secure login form
-- Error handling for invalid input
-- Access restricted to authenticated users only
-
-### 2. 📁 Project Management
-- **CRUD Functionalities**:
-  - Add projects with name, start date, status, and progress
-  - Display projects in a visually appealing card layout
-  - Edit and delete any project
-- **Progress Visualization**:
-  - Progress bars to reflect completion percentage
-  - Status labels: `Planning`, `Active`, `On Hold`, `Completed`
-- **Date Management**:
-  - Easy date input
-  - Human-friendly formatting
-
-### 3. 📱 Responsive Design
-- Mobile-friendly and works on all screen sizes
-- Built using **Bootstrap 4** and **custom CSS**
-- Smooth user interface with consistent design patterns
-
-### 4. ⚙️ Interactive UI Elements
-- Modal forms for adding/editing
-- Confirmation prompts before deletions
-- Loading indicators and error handling
-- Real-time UI updates
-
----
-
-## 🛠️ Technology Stack
-
-### Frontend
-- **HTML5**
-- **CSS3**
-- **JavaScript**
-- **Bootstrap 4**
-- **Font Awesome**
-
-### Backend (Mocked – Replaceable)
-- RESTful API structure
-- JSON format
-- Fetch API for async communication
-
-> 🛠️ **Note**:  
-> The project currently uses a mocked local API (e.g., `http://localhost:3000/api/...`) for demonstration.  
-> ⚠️ **If you are integrating a real backend**, make sure to **replace all mocked API URLs** in the JavaScript code with your **own API endpoints**.
-
----
-
-## 🖼️ Screenshots
-
-<div style="overflow-x: auto; white-space: nowrap; padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
-
-  <img src="https://github.com/user-attachments/assets/d5407099-c76b-4cd6-b4f5-a756c5fcdd70" alt="Screenshot 01 - 223326" width="300" style="margin-right: 10px;" />
-  
-  <img src="https://github.com/user-attachments/assets/cea05194-8de1-4a8c-aa2e-3fff76ac1284" alt="Screenshot 02 - 223343" width="300" style="margin-right: 10px;" />
-  
-  <img src="https://github.com/user-attachments/assets/27159717-5483-4c48-9c23-4e2cb23c67ef" alt="Screenshot 03 - 223411" width="300" style="margin-right: 10px;" />
-  
-  <img src="https://github.com/user-attachments/assets/41fce2c5-4767-4a2b-beac-5c67c4c19071" alt="Screenshot 04 - 223430" width="300" style="margin-right: 10px;" />
-  
-  <img src="https://github.com/user-attachments/assets/37bd2722-c713-4a19-99c4-625a18f71078" alt="Screenshot 05 - 223449" width="300" style="margin-right: 10px;" />
-  
-  <img src="https://github.com/user-attachments/assets/07c61faf-44ba-4cb8-abcc-78d0eb4b1def" alt="Screenshot 06 - 223520" width="300" style="margin-right: 10px;" />
-  
-  <img src="https://github.com/user-attachments/assets/e34880f8-29e2-492f-8587-4363855bd205" alt="Screenshot 07 - 223607" width="300" style="margin-right: 10px;" />
-  
-  <img src="https://github.com/user-attachments/assets/79194ce1-334d-4335-89eb-cd0045eb9ec7" alt="Screenshot 08 - 223628" width="300" style="margin-right: 10px;" />
-  
-  <img src="https://github.com/user-attachments/assets/5f541538-ac74-4aef-80b4-33658a33ae46" alt="Screenshot 09 - 223756" width="300" style="margin-right: 10px;" />
-  
-  <img src="https://github.com/user-attachments/assets/c42b3feb-b2bd-421f-953a-8fe8c7d6442b" alt="Screenshot 10 - 223815" width="300" style="margin-right: 10px;" />
+`HTML5` · `CSS3` · `JavaScript` · `ASP.NET Core 8` · `JWT` · `EF Core` · `SQL Server`
 
 </div>
-<p align="center">
-  <a href="https://www.linkedin.com/posts/mostafamedhat-dev_webdevelopment-portfoliodashboard-frontenddevelopment-activity-7340516875543429120-D3yP?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEGEn_QBi7EWFLs6EwtB1AvT8AUGyc6BDdA" target="_blank">
-    <img src="https://img.shields.io/badge/🎥 Watch%20Project%20Demo%20on%20LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="Watch on LinkedIn" />
-  </a>
-</p>
 
----
+## Overview
 
-## 🧪 Demo Credentials
+This project combines a public portfolio website with an authenticated administration dashboard. Portfolio content, skills, projects, contact messages, and dashboard statistics are managed through an ASP.NET Core Web API backed by SQL Server.
 
-- **Username**: `admin`  
-- **Password**: `password`
+## Highlights
 
----
+- Responsive public portfolio with About, Services, Skills, Projects, Team, and Contact sections.
+- Login and registration backed by JWT authentication and BCrypt password hashing.
+- Dashboard statistics for projects, skills, messages, and portfolio activity.
+- Project CRUD operations from the administration interface.
+- Contact-message submission and dashboard inbox.
+- Entity Framework Core migrations and seeded development data.
+- Swagger/OpenAPI documentation for backend endpoints.
 
-## 💻 How to Run
-Run it:
+## Application flow
 
-- Just open index.html in your browser.
+```mermaid
+flowchart LR
+    Visitor[Portfolio visitor] --> Frontend[Responsive HTML/CSS/JS]
+    Admin[Portfolio owner] --> Dashboard[Admin dashboard]
+    Frontend --> API[ASP.NET Core Web API]
+    Dashboard -->|JWT| API
+    API --> EF[Entity Framework Core]
+    EF --> DB[(SQL Server)]
+```
 
-- Or use a local server like "Live Server" in VS Code for better development experience.
+## API areas
 
-- Connect to Real Backend (Optional):
+| Area | Capabilities |
+|---|---|
+| Authentication | Register and login |
+| Projects | List, create, update, and delete projects |
+| Messages | Submit and retrieve contact messages |
+| Dashboard | Statistics, projects, messages, and skills |
 
-- Replace the mocked API URLs inside script.js with your own API base URL 
+## Project structure
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/MostafaMedhat19/Responsive-and-dynamic-Portfolio-Website.git
+```text
+├── PortfolioDashboard/            ASP.NET Core backend
+│   ├── Controllers/               API endpoints
+│   ├── Services/                  Auth and dashboard business logic
+│   ├── Models/                    User, Project, Skill, Message, Stats
+│   ├── Data/                      DbContext and seed initialization
+│   └── Migrations/                EF Core migrations
+└── Responsive Portfolio Website/  Public portfolio and admin dashboard UI
+    ├── index.html                 Portfolio experience
+    ├── dashbord.html              Management dashboard
+    ├── style.css / dashbord.css   Responsive styling
+    └── script.js / dashbord.js    API integration and interactions
+```
 
+## Run locally
+
+### Requirements
+
+- .NET 8 SDK
+- SQL Server LocalDB or SQL Server
+- A modern browser
+
+```bash
+git clone https://github.com/MostafaMedhat19/Responsive-and-dynamic-Portfolio-Website.git
+cd Responsive-and-dynamic-Portfolio-Website/PortfolioDashboard
+dotnet restore
+```
+
+Store database and JWT configuration outside source control:
+
+```bash
+dotnet user-secrets init
+dotnet user-secrets set "ConnectionStrings:DefaultConnection" "YOUR_SQL_SERVER_CONNECTION"
+dotnet user-secrets set "Jwt:Secret" "YOUR_LONG_RANDOM_SIGNING_KEY"
+dotnet user-secrets set "Jwt:Issuer" "https://localhost:7170"
+dotnet user-secrets set "Jwt:Audience" "https://localhost:7170"
+dotnet ef database update
+dotnet run
+```
+
+Serve the `Responsive Portfolio Website` directory with a local web server and update the JavaScript API base URL if the backend starts on a different port.
+
+## Development roadmap
+
+- Centralize the duplicated API base URL in one configuration file.
+- Add integration tests for authentication and project CRUD.
+- Add a hosted live demo and deployment workflow.
+- Store production secrets in the deployment platform rather than `appsettings.json`.
+- Improve validation, error states, and token-expiration handling.
+
+## Author
+
+[Mostafa Medhat](https://github.com/MostafaMedhat19)
